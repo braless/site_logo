@@ -54,7 +54,7 @@ function getCache() {
 function GetCookie() {
    //$.http.get("https://api.day.app/vCTP9AnrqRvYMDg6cC6cSf/'更新京东'/'+开始+'/?icon=https://cdn.jsdelivr.net/gh/braless/site_logo/jd_app.png")
   const Referer = $request.headers['Referer'] || '';
-  if (!Referer) return;
+  //if (!Referer) return;
   try {
     if ($request.headers && $request.url.indexOf('https://api.m.jd.com/openUpgrade') > -1) {
       var CV = $request.headers['Cookie'] || $request.headers['cookie'];
