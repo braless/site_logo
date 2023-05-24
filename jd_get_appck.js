@@ -50,7 +50,7 @@ function getCache() {
   var cache = $.read(CacheKey) || '[]';
   return JSON.parse(cache);
 }
-function GetCookie() 
+function GetCookie() {
   const Referer = $request.headers['Referer'] || '';
   try {
      $.notify("进入app_ck获取函数...")
