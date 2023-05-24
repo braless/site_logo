@@ -54,11 +54,11 @@ function getCache() {
 }
 
 function GetCookie() {
-   $.http.get("https://api.day.app/3rnzRCyqGvzSi8rFzSVXJj/'更新京东'/'+开始+'/?icon=https://cdn.jsdelivr.net/gh/braless/site_logo/jd_app.png")
+  $.notify("进入wsk获取函数...")
   const Referer = $request.headers['Referer'] || '';
   //if (!Referer) return;
   try {
-    if ($request.headers && $request.url.indexOf('https://api.m.jd.com/client.action?functionId=msgEntrance') > -1) {
+    if ($request.headers && $request.url.indexOf('https://api.m.jd.com/') > -1) {
       var CV = $request.headers['Cookie'] || $request.headers['cookie'];
       if (CV.match(/(wskey=.+?)/)) {
         var CookieValue = CV.match(/wskey=.+?;/);
