@@ -50,11 +50,11 @@ function getCache() {
   var cache = $.read(CacheKey) || '[]';
   return JSON.parse(cache);
 }
-function GetCookie() {
-  $.notify("进入app_ck获取函数...")
+function GetCookie() 
   const Referer = $request.headers['Referer'] || '';
   try {
-    if ($request.url.indexOf('openUpgrade') > -1) {
+     $.notify("进入app_ck获取函数...")
+    if ($request.url.indexOf('openUpgrade') > -1  || $request.url.indexOf('https://api.m.jd.com/client.action') > ) {
       var CV = $request.headers['Cookie'] || $request.headers['cookie'];
       if (CV.match(/(pt_key=.+?pt_pin=|pt_pin=.+?pt_key=)/)) {
       const CookieValue = CV.match(/pt_key=.+?;/) + CV.match(/pt_pin=.+?;/);
