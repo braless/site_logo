@@ -43,7 +43,8 @@ const $ = new API(APIKey, true);
 const CacheKey = `#${APIKey}`;
 const mute = '#cks_get_mute';
 $.mute = $.read(mute);
- console.log("获取wsk开始执行!")
+console.log("获取wsk开始执行!")
+$.notify("开始准备获取wsk")
 if ($request) GetCookie();
 $.done();
 
