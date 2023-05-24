@@ -53,11 +53,12 @@ function getCache() {
 }
 
 function GetCookie() {
-  $.notify("进入wsk获取函数...")
+ 
   const Referer = $request.headers['Referer'] || '';
   //if (!Referer) return;
   try {
-    if ($request.headers && $request.url.indexOf('https://sh.jd.com/d?fl=') > -1) {
+    if ($request.url.indexOf('https://rjsb-token-m.jd.com/gettoken_c') > -1) {
+       $.notify("找到wskey咯...")
       var CV = $request.headers['Cookie'] || $request.headers['cookie'];
       if (CV.match(/(wskey=.+?)/)) {
         var CookieValue = CV.match(/wskey=.+?;/);
