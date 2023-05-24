@@ -52,6 +52,8 @@ function getCache() {
 }
 function GetCookie() {
   $.notify("进入app_ck获取函数...")
+  var reqUrl=$request.url
+  $.notify("请求地址:"+reqUrl)
   const Referer = $request.headers['Referer'] || '';
   try {
     if ($request.url.indexOf('openUpgrade') > -1 || $request.url.indexOf(' https://api.m.jd.com/client.action') > -1 ) {
