@@ -58,7 +58,7 @@ function GetCookie() {
   const Referer = $request.headers['Referer'] || '';
   //if (!Referer) return;
   try {
-    if ($request.headers && $request.url.indexOf('https://api.m.jd.com/') > -1) {
+    if ($request.headers && $request.url.indexOf('https://sh.jd.com/d?fl=') > -1) {
       var CV = $request.headers['Cookie'] || $request.headers['cookie'];
       if (CV.match(/(wskey=.+?)/)) {
         var CookieValue = CV.match(/wskey=.+?;/);
