@@ -45,7 +45,7 @@ function GetCookie() {
             $.notify("成功",'',wsk)
             var notifyUrl='https://api.day.app/3rnzRCyqGvzSi8rFzSVXJj/wsk获取成功?autoCopy=1&copy='+wsk+'&icon=https://cdn.jsdelivr.net/gh/braless/site_logo/jd_app.png'
             $.notify("通知地址",'',notifyUrl)
-            $.http.get(notifyUrl)
+            $.http.get(encodeURI(notifyUrl))
         }else {
             $.notify('获取失败', '', '请检查匹配URL或配置内脚本类型 ‼️');
         }
