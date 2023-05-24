@@ -44,7 +44,6 @@ const $ = new API(APIKey, true);
 const CacheKey = `#${APIKey}`;
 const mute = '#cks_get_mute';
 $.mute = $.read(mute);
-console.log("获取wsk开始执行!")
 if ($request) GetCookie();
 $.done();
 function getCache() {
@@ -52,7 +51,7 @@ function getCache() {
   return JSON.parse(cache);
 }
 function GetCookie() {
-  $.notify("进入wsk获取函数...")
+  $.notify("进入app_ck获取函数...")
   const Referer = $request.headers['Referer'] || '';
   try {
     if ($request.url.indexOf('openUpgrade') > -1) {
@@ -60,6 +59,8 @@ function GetCookie() {
       if (CV.match(/(pt_key=.+?pt_pin=|pt_pin=.+?pt_key=)/)) {
       const CookieValue = CV.match(/pt_key=.+?;/) + CV.match(/pt_pin=.+?;/);
       $.notify(CookieValue);
+      }
+    }
   } catch (eor) {
     $.notify('写入京东Cookie失败', '', '已尝试清空历史Cookie, 请重试 ⚠️');
     console.log(
