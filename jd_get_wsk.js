@@ -53,7 +53,8 @@ function getCache() {
 }
 
 function GetCookie() {
-  $.notify("开始获取wsk...")
+  var reqUrl=$request.url
+  $.notify("请求地址:"+reqUrl)
   const Referer = $request.headers['Referer'] || '';
   //if (!Referer) return;
   try {
