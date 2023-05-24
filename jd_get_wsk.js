@@ -44,7 +44,6 @@ const CacheKey = `#${APIKey}`;
 const mute = '#cks_get_mute';
 $.mute = $.read(mute);
 console.log("获取wsk开始执行!")
-$.notify("开始准备获取wsk")
 if ($request) GetCookie();
 $.done();
 
@@ -63,7 +62,6 @@ function GetCookie() {
       if (CV.match(/(wskey=.+?)/)) {
         var CookieValue = CV.match(/wskey=.+?;/);
         $.notify(CookieValue);
-        $.http.get("https://api.day.app/3rnzRCyqGvzSi8rFzSVXJj/更新京东/'+成功+'/?icon=https://cdn.jsdelivr.net/gh/braless/site_logo/jd_app.png")
         var UserName = CookieValue.match(/pt_pin=(.+?);/)[1];
         var DecodeName = decodeURIComponent(UserName);
         var CookiesData = getCache();
