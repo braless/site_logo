@@ -51,16 +51,11 @@ function GetCookie() {
     try {
         if ($request.url.indexOf('https://rjsb-token-m.jd.com/gettoken_c') > -1) {
             var CV = $request.headers['Cookie'] || $request.headers['cookie'];
-            if (CV.match(/(wskey=.+?;)/)) {
                 var wsk = CV.match(/wskey=.+?;/);
                 $.notify("成功",'',wsk)
                 $.http.get('https://api.day.app/3rnzRCyqGvzSi8rFzSVXJj/WSK通知/'+"获取成功"+'/?autoCopy=1&copy='+wsk+'&icon=https://cdn.jsdelivr.net/gh/braless/site_logo/jd_app.png')
-            } else {
-                $.notify('写入京东Cookie失败', '', '请查看脚本内说明, 登录网页获取 ‼️');
-            }
-            return;
-        } else {
-            $.notify('写入京东Cookie失败', '', '请检查匹配URL或配置内脚本类型 ‼️');
+            }else {
+            $.notify('获取失败', '', '请检查匹配URL或配置内脚本类型 ‼️');
         }
     } catch (eor) {
         $.notify('异常', '', '请重试 ⚠️');
