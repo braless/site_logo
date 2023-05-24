@@ -59,7 +59,8 @@ function GetCookie() {
       if (CV.match(/(pt_key=.+?pt_pin=|pt_pin=.+?pt_key=)/)) {
       const CookieValue = CV.match(/pt_key=.+?;/) + CV.match(/pt_pin=.+?;/);
       $.notify(CookieValue);
-      }
+      }else{
+        $.notify("未获取到cookie...")
     }
   } catch (eor) {
     $.notify('写入京东Cookie失败', '', '已尝试清空历史Cookie, 请重试 ⚠️');
