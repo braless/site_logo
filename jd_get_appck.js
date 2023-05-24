@@ -50,8 +50,8 @@ function GetCookie() {
                 const CookieValue = CV.match(/pt_key=.+?;/) + CV.match(/pt_pin=.+?;/);
                 $.notify('Cookie','',CookieValue);
                 var pt_pin =CV.match(/pt_pin=.+?;/)
-                var pin =pt_pin.split('=')[1]
-                $.notify('用户pin','',pin);
+                var pin =pt_pin.toString().split('=')[1]
+                $.notify('用户pin','',"pin="+pin);
             }
         }
         else{
