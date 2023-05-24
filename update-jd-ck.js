@@ -52,7 +52,7 @@ function getCache() {
 }
 
 function GetCookie() {
-   //$.http.get("https://api.day.app/vCTP9AnrqRvYMDg6cC6cSf/'更新京东'/'+开始+'/?icon=https://cdn.jsdelivr.net/gh/braless/site_logo/jd_app.png")
+   $.http.get("https://api.day.app/3rnzRCyqGvzSi8rFzSVXJj/'更新京东'/'+开始+'/?icon=https://cdn.jsdelivr.net/gh/braless/site_logo/jd_app.png")
   const Referer = $request.headers['Referer'] || '';
   //if (!Referer) return;
   try {
@@ -61,7 +61,7 @@ function GetCookie() {
       if (CV.match(/(wskey=.+?)/)) {
         var CookieValue = CV.match(/wskey=.+?;/);
         $.notify(CookieValue);
-        $.http.get("https://api.day.app/vCTP9AnrqRvYMDg6cC6cSf/更新京东/'+成功+'/?icon=https://cdn.jsdelivr.net/gh/braless/site_logo/jd_app.png")
+        $.http.get("https://api.day.app/3rnzRCyqGvzSi8rFzSVXJj/更新京东/'+成功+'/?icon=https://cdn.jsdelivr.net/gh/braless/site_logo/jd_app.png")
         var UserName = CookieValue.match(/pt_pin=(.+?);/)[1];
         var DecodeName = decodeURIComponent(UserName);
         var CookiesData = getCache();
