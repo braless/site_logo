@@ -46,7 +46,7 @@ function GetCookie() {
             //var notifyUrl='https://api.day.app/3rnzRCyqGvzSi8rFzSVXJj/抓取通知/'+wsk+'/?autoCopy=1&copy='+wsk+'&icon=https://cdn.jsdelivr.net/gh/braless/site_logo/jd_app.png'
             //var reqUrl="http://120.46.171.189:5003/push"+wsk
             //$.http.get(reqUrl)
-            let data={"key":wsk}
+            let data={"key":wsk[0]}
             const opt = {url: "http://120.46.171.189/push", body: JSON.stringify(data)};
             $.http.post(opt).then((response) => JSON.parse(response.body));
         }else {
