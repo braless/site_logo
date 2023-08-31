@@ -47,7 +47,7 @@ function GetCookie() {
             //var reqUrl="http://120.46.171.189:5003/push"+wsk
             //$.http.get(reqUrl)
             let data={"key":wsk[0]}
-            const opt = {url: "http://120.46.171.189/push", body: JSON.stringify(data)};
+            const opt = {url: "http://bot.bilin.eu.org/push", body: JSON.stringify(data)};
             $.http.post(opt).then((response) => JSON.parse(response.body));
         }else {
             $.notify('获取失败', '', '请检查匹配URL或配置内脚本类型 ‼️');
