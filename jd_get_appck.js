@@ -35,6 +35,7 @@ const $ = new API(APIKey, true);
 const CacheKey = `#${APIKey}`;
 const mute = '#cks_get_mute';
 $.mute = $.read(mute);
+console.log("正在获取临时账号...");
 if ($request) GetCookie();
 $.done();
 function getCache() {
