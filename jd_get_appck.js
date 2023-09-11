@@ -48,7 +48,6 @@ function GetCookie() {
 
         ///anti-sdk-report.m.jd.com
         //openUpgrade
-         $.notify('正在获取临时账号...');
         if ($request.url.indexOf('https://anti-sdk-report.m.jd.com/report_event') > -1 ) {
             var CV = $request.headers['Cookie'] || $request.headers['cookie'];
             if (CV.match(/(pt_key=.+?pt_pin=|pt_pin=.+?pt_key=)/)) {
