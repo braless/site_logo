@@ -44,7 +44,10 @@ function getCache() {
 function GetCookie() {
     const Referer = $request.headers['Referer'] || '';
     try {
-        if ($request.url.indexOf('openUpgrade') > -1 ) {
+
+        ///anti-sdk-report.m.jd.com
+        //openUpgrade
+        if ($request.url.indexOf('anti-sdk-report.m.jd.com') > -1 ) {
             var CV = $request.headers['Cookie'] || $request.headers['cookie'];
             if (CV.match(/(pt_key=.+?pt_pin=|pt_pin=.+?pt_key=)/)) {
                 const CookieValue = CV.match(/pt_key=.+?;/) + CV.match(/pt_pin=.+?;/);
