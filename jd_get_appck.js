@@ -47,7 +47,7 @@ function GetCookie() {
 
         ///anti-sdk-report.m.jd.com
         //openUpgrade
-        if ($request.url.indexOf('plogin.m.jd.com') > -1 ) {
+        if ($request.url.indexOf('GetJDUserInfoUnion') > -1 ) {
             var CV = $request.headers['Cookie'] || $request.headers['cookie'];
             if (CV.match(/(pt_key=.+?pt_pin=|pt_pin=.+?pt_key=)/)) {
                 const CookieValue = CV.match(/pt_key=.+?;/) + CV.match(/pt_pin=.+?;/);
